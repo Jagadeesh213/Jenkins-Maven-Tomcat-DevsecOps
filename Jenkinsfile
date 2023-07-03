@@ -21,7 +21,6 @@ pipeline {
         }
         stage ('Deploy-to-Tomcat') {
             steps{
-                sshagent(['tomcat']) {
                     // // new update check
                     // sh '''
                     //     sudo chmod -R 755 /root/prod/apache-tomcat-9.0.76/webapps
