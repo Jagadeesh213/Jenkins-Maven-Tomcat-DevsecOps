@@ -38,3 +38,12 @@ pipeline {
                     ssh -oStrictHostKeyChecking=no host
                 }
            }
+             stage('Verify') {
+             steps {
+             Perform additional verification or integration tests
+            sh 'curl http://65.0.26.132:8080/'
+      }
+    }
+
+
+            
