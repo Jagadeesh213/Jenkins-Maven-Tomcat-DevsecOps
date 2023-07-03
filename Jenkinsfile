@@ -36,7 +36,4 @@ pipeline {
                     sh 'ssh root@tomcat-server "sudo systemctl start tomcat"'
                     ssh -oStrictHostKeyChecking=no host
                 }
-            }
-        }
-    }
-}
+           }
