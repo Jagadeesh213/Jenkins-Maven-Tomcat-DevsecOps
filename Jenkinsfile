@@ -33,15 +33,15 @@ pipeline {
                     sh 'ssh root@tomcat-server "sudo systemctl stop tomcat"'
                     sh 'ssh root@tomcat-server "rm -rf /opt/tomcat/webapps"'
                     sh 'mkdir -p deploy'
-                    sh 'scp /var/lib/jenkins/workspace/deploy root@tomcat-server:/opt/tomcat/webapps'
-                    sh 'ssh root@tomcat-server "sudo systemctl start tomcat"'
+                    sh 'scp /var/lib/jenkins/workspace/deploy root@13.127.232.105:/opt/tomcat/webapps'
+                    sh 'ssh root@13.127.232.105 "sudo systemctl start tomcat"'
                     ssh -oStrictHostKeyChecking=no host
                 }
            }
              stage('Verify') {
              steps {
              Perform additional verification or integration tests
-            sh 'curl http://65.0.26.132:8080/'
+            sh 'curl http://13.127.232.105:8080/'
       }
     }
 
